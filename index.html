@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Percentage Calculator</title>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+            *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-family: 'Roboto Mono', monospace;
+            }
+        header{
+    /* width: 100%; */
+    height: 13vh;
+    background-color: royalblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+.box{
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    /* border: 2px solid black; */
+    font-size: 50px;
+    /* border-radius: 5px; */
+}
+@media screen and (max-width: 1200px){
+    header{
+        background-color: royalblue;
+        height: 10vh;
+        font-size: 70px;
+    }
+    .box{
+        width: 80%;
+        font-size: 40px;
+    }
+    input{
+        height: 30px;
+    }
+}
+.btn{
+    background-color: royalblue;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 180px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    color: royalblue;
+    border:2px solid royalblue;
+}
+.ans{
+    padding-top: 50px;
+    font-weight: 800;
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            Percentage Calculator
+        </header>
+        <!-- <div class="box">
+            <form name="form1" action="index.js" method="POST">
+                <p>What <span><input name="percentage" type="text" placeholder="Percentage"></span> <br> of <span><input name="number" type="text" placeholder="Total Amount"></span>?</p>
+                <input class="btn" type="button"  
+                value="Calculate" onclick="percent()" >
+            <p class="ans">
+
+            </p>
+            </form>
+        </div> -->
+        <div class="box">
+            <form name="form2" action="index.js" method="POST">
+                <p>What <span><input name="sum" type="text" placeholder="Sum Of Yours" required></span> <br> of <span><input name="total" type="text" placeholder="Total" required></span>?</p>
+                <input class="btn" type="button"  
+                value="Calculate" onclick="getpercent()" >
+            <p class="ans">
+
+            </p>
+            </form>
+        </div>
+        <script>
+            function percent(){
+            let a = document.form1.percentage.value/100;
+            console.log(a);
+            let b = document.form1.number.value * a;
+            document.getElementsByClassName('ans')[0].innerHTML = b;
+        }
+            function getpercent(){
+                let c = document.form2.sum.value;
+                let d = document.form2.total.value;
+                let e = c / d * 100;
+                document.getElementsByClassName('ans')[0].innerHTML = e;
+            }
+        </script>
+        <!-- <script src="index.js"></script> -->
+    </body>
+</html>
